@@ -1,0 +1,29 @@
+# configs/model_config.yaml
+model:
+  feature_extractor:
+    name: "efficientnet_b7"  # or efficientnet_b0
+    input_shape: [224, 224, 3]
+    weights: "imagenet"
+    feature_dim: 1024
+    
+  classifier:
+    type: "1d_cnn"  # or "random_forest"
+    cnn_params:
+      conv_filters: [32, 64]
+      kernel_size: 3
+      dense_layers: [128, 64]
+      dropout_rate: 0.5
+      
+training:
+  batch_size: 32
+  epochs: 80
+  learning_rate: 0.001
+  validation_split: 0.2
+  
+augmentation:
+  rotation_range: 20
+  width_shift_range: 0.2
+  height_shift_range: 0.2
+  shear_range: 0.2
+  zoom_range: 0.2
+  horizontal_flip: true

@@ -1,0 +1,14 @@
+# configs/data_config.yaml
+dataset:
+  path: "separated_ISIC_2019"
+  num_classes: 8
+  max_images_per_class: null  # null for no limit
+  class_names: 
+    - "melanoma"
+    - "nevus"
+    # ... add other classes
+
+preprocessing:
+  resize_dims: [224, 224]
+  normalize: true
+  use_smote: true
